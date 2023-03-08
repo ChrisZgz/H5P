@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(true);
         webSettings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new Callback());
+
+
+        
+        //test
         webView.loadUrl("file:///android_asset/index.html");
 
     }
