@@ -5,23 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.os.Handler;
 
 public class Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.fondo);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
         Button button = findViewById(R.id.btn);
-        Button buttontest = findViewById(R.id.buttontest);
+        Button buttonTwo = findViewById(R.id.btnTwo);
 
         button.setOnClickListener(v -> {
             Intent i = new Intent(Splash.this, MainActivity.class);
             startActivity(i);
         });
-        buttontest.setOnClickListener(v -> {
+
+        buttonTwo.setOnClickListener(V -> {
             Intent i = new Intent(Splash.this, MainActivity2.class);
             startActivity(i);
         });
