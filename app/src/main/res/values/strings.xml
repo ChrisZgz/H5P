@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Helloooo</string>
+    <string name="app_name">IED</string>
+    <string name="name">Dog</string>
+    <string name="welcome">Welcome to the App!</string>
 </resources>

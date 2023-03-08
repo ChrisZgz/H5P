@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IED</string>
+    <string name="name">Perro</string>
+    <string name="welcome">Bienvenido a la App!</string>
+</resources>
