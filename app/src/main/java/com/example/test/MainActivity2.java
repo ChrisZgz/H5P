@@ -7,25 +7,23 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class MainActivity extends AppCompatActivity {
-
-    WebView webView;
+public class MainActivity2 extends AppCompatActivity {
+    WebView webView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.fondo);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webView = findViewById(R.id.webView);
-        WebSettings webSettings = webView.getSettings();
+        webView2 = findViewById(R.id.test);
+        WebSettings webSettings = webView2.getSettings();
         webSettings.setBuiltInZoomControls(true);
         webSettings.setJavaScriptEnabled(true);
-        webView.setWebViewClient(new Callback());
-        webView.loadUrl("file:///android_asset/index.html");
+        webView2.setWebViewClient(new Callback2());
+        webView2.loadUrl("file:///android_asset/lumi.html");
 
     }
-
-    private class Callback extends WebViewClient {
+    private class Callback2 extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             return false;
