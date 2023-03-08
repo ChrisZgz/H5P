@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -28,6 +30,8 @@ public class Splash extends AppCompatActivity {
             startActivity(i);
         });
 
+
+
       /*  new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -35,5 +39,21 @@ public class Splash extends AppCompatActivity {
                 startActivity(i);
             }
         }, 3000);*/
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id){
+            case R.id.btnLogo:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
