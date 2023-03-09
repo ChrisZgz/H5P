@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9516DAA3"
+    android:background="@color/lblue"
     tools:context=".Home">
 
     <TextView
@@ -78,7 +78,7 @@
         android:id="@+id/btnAbout"
         android:layout_width="187dp"
         android:layout_height="50dp"
-        android:background="@color/teal_200"
+        android:background="@drawable/roundbuttondarkblue"
         android:text="About Us"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,9 +91,9 @@
         android:id="@+id/btnStart"
         android:layout_width="187dp"
         android:layout_height="50dp"
-        android:background="@color/lblue"
+        android:background="@drawable/roundbuttonwhite"
         android:text="Get Started"
-        android:textColor="#10DC96"
+        android:textColor="@color/lblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
