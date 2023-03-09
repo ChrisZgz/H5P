@@ -18,15 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31" >
         <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:parentActivityName=".Splash">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Splash"
+            android:name=".Home"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,9 +31,18 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Start"
             android:exported="false"
-            android:parentActivityName=".Splash">
+            android:parentActivityName=".Home">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".AboutUs"
+            android:exported="false"
+            android:parentActivityName=".Home">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

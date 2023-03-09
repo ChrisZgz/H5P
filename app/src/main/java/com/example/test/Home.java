@@ -3,8 +3,6 @@ package com.example.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -15,14 +13,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Locale;
 
-public class Splash extends AppCompatActivity {
+public class Home extends AppCompatActivity {
 
     public static final String[] languages = {"Select Language", "English", "Spanish", "Greek"};
 
@@ -30,23 +27,22 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.fondo);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_home);
 
+        Button btnAbout = findViewById(R.id.btnAbout);
+        Button btnStart = findViewById(R.id.btnStart);
         TextView textWelcome = findViewById(R.id.textWelcome);
         ImageView imgLang = findViewById(R.id.imgLang);
         Spinner spinner = findViewById(R.id.spinner);
-        ImageButton button = findViewById(R.id.btn);
-        ImageButton buttonTwo = findViewById(R.id.btnTwo);
 
-        imgLang.setImageResource(R.drawable.greece);
-
-        if (textWelcome.getText().equals("Welcome to the App!")) {
+        if (textWelcome.getText().equals("CEM4SME Minigame")) {
             imgLang.setImageResource(R.drawable.usa);
-        } else if (textWelcome.getText().equals("Bienvenido a la App!")) {
+        } else if (textWelcome.getText().equals("Minijuego de CEM4SME")) {
             imgLang.setImageResource(R.drawable.spain);
-        } else if (textWelcome.getText().equals("καλώς ήρθατε στην εφαρμογή")) {
+        } else if (textWelcome.getText().equals("Μίνι παιχνίδι CEM4SME")) {
             imgLang.setImageResource(R.drawable.greece);
         }
+
 
 
         ArrayAdapter<String> adap = new ArrayAdapter<String>(this,
@@ -59,15 +55,15 @@ public class Splash extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selected = parent.getItemAtPosition(position).toString();
                 if (selected.equals("English")) {
-                    setLocale( "en", Splash.this);
+                    setLocale( "en", Home.this);
                     finish();
                     startActivity(getIntent());
                 } else if (selected.equals("Spanish")) {
-                    setLocale( "es", Splash.this);
+                    setLocale( "es", Home.this);
                     finish();
                     startActivity(getIntent());
                 } else if (selected.equals("Greek")) {
-                    setLocale( "el", Splash.this);
+                    setLocale( "el", Home.this);
                     finish();
                     startActivity(getIntent());
                 }
@@ -79,13 +75,13 @@ public class Splash extends AppCompatActivity {
             }
         });
 
-        button.setOnClickListener(v -> {
-            Intent i = new Intent(Splash.this, MainActivity.class);
+        btnAbout.setOnClickListener(v -> {
+            Intent i = new Intent(Home.this, AboutUs.class);
             startActivity(i);
         });
 
-        buttonTwo.setOnClickListener(V -> {
-            Intent i = new Intent(Splash.this, MainActivity2.class);
+        btnStart.setOnClickListener(v -> {
+            Intent i = new Intent(Home.this, Start.class);
             startActivity(i);
         });
 
