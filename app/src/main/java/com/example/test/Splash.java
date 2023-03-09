@@ -16,7 +16,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -30,9 +32,22 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        TextView textWelcome = findViewById(R.id.textWelcome);
+        ImageView imgLang = findViewById(R.id.imgLang);
         Spinner spinner = findViewById(R.id.spinner);
         ImageButton button = findViewById(R.id.btn);
         ImageButton buttonTwo = findViewById(R.id.btnTwo);
+
+        imgLang.setImageResource(R.drawable.greece);
+
+        if (textWelcome.getText().equals("Welcome to the App!")) {
+            imgLang.setImageResource(R.drawable.usa);
+        } else if (textWelcome.getText().equals("Bienvenido a la App!")) {
+            imgLang.setImageResource(R.drawable.spain);
+        } else if (textWelcome.getText().equals("καλώς ήρθατε στην εφαρμογή")) {
+            imgLang.setImageResource(R.drawable.greece);
+        }
+
 
         ArrayAdapter<String> adap = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, languages);
