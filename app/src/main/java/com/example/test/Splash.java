@@ -2,19 +2,27 @@ package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import java.util.Locale;
 
 public class Splash extends AppCompatActivity {
+
+    public static final String[] languages = {"Select Language", "English", "Spanish", "Greek"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +30,39 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        Spinner spinner = findViewById(R.id.spinner);
         ImageButton button = findViewById(R.id.btn);
         ImageButton buttonTwo = findViewById(R.id.btnTwo);
-        Button btnLanguage = findViewById(R.id.btnLanguage);
+
+        ArrayAdapter<String> adap = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, languages);
+        adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adap);
+        spinner.setSelection(0);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selected = parent.getItemAtPosition(position).toString();
+                if (selected.equals("English")) {
+                    setLocale( "en", Splash.this);
+                    finish();
+                    startActivity(getIntent());
+                } else if (selected.equals("Spanish")) {
+                    setLocale( "es", Splash.this);
+                    finish();
+                    startActivity(getIntent());
+                } else if (selected.equals("Greek")) {
+                    setLocale( "el", Splash.this);
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         button.setOnClickListener(v -> {
             Intent i = new Intent(Splash.this, MainActivity.class);
@@ -36,19 +74,6 @@ public class Splash extends AppCompatActivity {
             startActivity(i);
         });
 
-        btnLanguage.setOnClickListener(v -> {
-            changeLanguage();
-        });
-
-
-
-      /*  new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(Splash.this, MainActivity.class);
-                startActivity(i);
-            }
-        }, 3000);*/
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,36 +92,13 @@ public class Splash extends AppCompatActivity {
         }
     }
 
-    private void changeLanguage() {
-        final String languages[] = {"English", "Spanish", "Greek"};
-        AlertDialog.Builder lan = new AlertDialog.Builder(this);
-        lan.setTitle("Choose a Language");
-        lan.setSingleChoiceItems(languages, -1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int which) {
-                if (which == 0) {
-                    setLocale("en");
-                    recreate();
-                } else if (which == 1) {
-                    setLocale("es");
-                    recreate();
-                } else if (which == 1) {
-                    setLocale("gr");
-                    recreate();
-                }
-                lan.create();
-                lan.show();
-            }
-        });
-    }
 
-    private void setLocale(String ur) {
-        Locale locale = new Locale(ur);
-        Locale.setDefault(locale);
-        Configuration con = new Configuration();
-        con.locale = locale;
-        getBaseContext().getResources().updateConfiguration(con, getBaseContext().getResources()
-                .getDisplayMetrics());
-
+    private void setLocale(String langCode, Activity act) {
+        Locale locale = new Locale(langCode);
+        locale.setDefault(locale);
+        Resources res = act.getResources();
+        Configuration con = res.getConfiguration();
+        con.setLocale(locale);
+        res.updateConfiguration(con, res.getDisplayMetrics());
     }
 }

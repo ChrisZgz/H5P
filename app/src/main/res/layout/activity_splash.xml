@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Splash">
 
-    <Button
-        android:id="@+id/btnLanguage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Change Language"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="251dp"
@@ -27,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153"
+        app:layout_constraintVertical_bias="0.212"
         app:srcCompat="@drawable/logo"
         tools:ignore="ImageContrastCheck" />
 
@@ -38,7 +26,7 @@
         android:fontFamily="sans-serif-condensed"
         android:text="@string/welcome"
         android:textAlignment="center"
-        android:textSize="95sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -69,5 +57,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.974"
         app:srcCompat="@drawable/answer" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
