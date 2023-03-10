@@ -112,6 +112,8 @@ public class Start extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.btnLogo:
+                Intent i = new Intent(Start.this, AboutUs.class);
+                startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
