@@ -47,18 +47,6 @@
         app:layout_constraintVertical_bias="0.021"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="55dp"
-        android:layout_height="51dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/circle" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -68,38 +56,42 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAbout"
-        android:layout_width="187dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/roundbuttondarkblue"
+        android:fontFamily="@font/caviarbold"
         android:text="@string/about"
         android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.859" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStart"
-        android:layout_width="187dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/roundbuttonwhite"
+        android:fontFamily="@font/caviarbold"
         android:text="@string/start"
         android:textColor="@color/lblue"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="0.76" />
 
     <TextView
         android:id="@+id/textView3"

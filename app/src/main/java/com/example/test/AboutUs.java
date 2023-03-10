@@ -3,6 +3,7 @@ package com.example.test;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,9 +27,11 @@ public class AboutUs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+
         ImageView imgLang = findViewById(R.id.imgLang2);
         Spinner spinner = findViewById(R.id.spinner2);
         TextView textAbout = findViewById(R.id.textAbout);
+        ImageButton btnHomeAbout = findViewById(R.id.btnHomeAbout);
 
         spinner.setVisibility(View.INVISIBLE);
         imgLang.setVisibility(View.INVISIBLE);
@@ -68,6 +72,11 @@ public class AboutUs extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+        });
+
+        btnHomeAbout.setOnClickListener(v -> {
+            Intent i = new Intent(AboutUs.this, Home.class);
+            startActivity(i);
         });
 
     }
