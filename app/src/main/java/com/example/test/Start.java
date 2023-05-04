@@ -25,6 +25,8 @@ import java.util.Locale;
 
 public class Start extends AppCompatActivity {
 
+    //  All of this activity is explained on the first Java activity which is the Home activity
+
     public static final String[] languages = {"Select Language", "English", "Spanish", "Greek"};
     WebView webView;
 
@@ -39,6 +41,10 @@ public class Start extends AppCompatActivity {
         TextView textStart = findViewById(R.id.textStart);
 
         webView = findViewById(R.id.webView);
+
+//      Here we apply some settings and configurations to the WebView, a WebView is a "window" to
+//      load URL, so for this app, first we made H5P project and we saved it as a HTML file and
+//      we transfered it locally to the Android project and we load it on the WebView
         WebSettings webSettings = webView.getSettings();
         webSettings.setBuiltInZoomControls(true);
         webSettings.setJavaScriptEnabled(true);
@@ -94,7 +100,8 @@ public class Start extends AppCompatActivity {
     }
 
 
-
+//  This method is for the WebView to  continue loading the URL as usual without any special
+//  handling
     private class Callback extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {

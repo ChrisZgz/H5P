@@ -21,6 +21,8 @@ import java.util.Locale;
 
 public class AboutUs extends AppCompatActivity {
 
+//  All of this activity is explained on the first Java activity which is the Home activity
+
     public static final String[] languages = {"Select Language", "English", "Spanish", "Greek"};
 
     @Override
@@ -33,6 +35,9 @@ public class AboutUs extends AppCompatActivity {
         TextView textAbout = findViewById(R.id.textAbout);
         ImageButton btnHomeAbout = findViewById(R.id.btnHomeAbout);
 
+//      Here is the difference, I made the spinner and the image invisible, because I tried to not
+//      put either the spinner and the image but the activity won't translate, so I tried it this
+//      way and it worked, so I leaved it like this
         spinner.setVisibility(View.INVISIBLE);
         imgLang.setVisibility(View.INVISIBLE);
 
